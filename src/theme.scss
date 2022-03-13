@@ -1,0 +1,232 @@
+/** 背景 */
+$back: var(--back);
+$back2: var(--back2);
+$back3: var(--back3);
+/** 半透明层 */
+$shadow: var(--shadow);
+$shadow2: var(--shadow2);
+$shadow3: var(--shadow3);
+/** 字体 */
+$font: var(--font);
+$font2: var(--font2);
+$font2: var(--font2);
+/** 灰色 */
+$gray: var(--gray);
+$gray2: var(--gray2);
+$gray3: var(--gray3);
+$gray4: var(--gray4);
+$gray5: var(--gray5);
+$gray6: var(--gray6);
+/** 红色 */
+$red: var(--red);
+$red2: var(--red2);
+$red3: var(--red3);
+/** 橙色 */
+$orange: var(--orange);
+$orange2: var(--orange2);
+$orange3: var(--orange3);
+/** 黄色 */
+$yellow: var(--yellow);
+$yellow2: var(--yellow2);
+$yellow3: var(--yellow3);
+/** 绿色 */
+$green: var(--green);
+$green2: var(--green2);
+$green3: var(--green3);
+/** 青色 */
+$cyan: var(--cyan);
+$cyan2: var(--cyan2);
+$cyan3: var(--cyan3);
+/** 蓝色 */
+$blue: var(--blue);
+$blue2: var(--blue2);
+$blue3: var(--blue3);
+/** 紫色 */
+$purple: var(--purple);
+$purple2: var(--purple2);
+$purple3: var(--purple3);
+/** 粉色 */
+$pink: var(--pink);
+$pink2: var(--pink2);
+$pink3: var(--pink3);
+/** 棕色 */
+$brown: var(--brown);
+$brown2: var(--brown2);
+$brown3: var(--brown3);
+/** 靛蓝色 */
+$indigo: var(--indigo);
+$indigo2: var(--indigo2);
+$indigo3: var(--indigo3);
+/** 薄荷色 */
+$mint: var(--mint);
+$mint2: var(--mint2);
+$mint3: var(--mint3);
+/** 水蓝色 */
+$teal: var(--teal);
+$teal2: var(--teal2);
+$teal3: var(--teal3);
+
+@mixin light {
+  /** 背景 */
+  --back: #ffffff;
+  --back2: #ededed;
+  --back3: #dbdbdb;
+  /** 阴影 */
+  --shadow: rgba(0, 0, 0, 0.08);
+  --shadow2: rgba(0, 0, 0, 0.16);
+  --shadow3: rgba(0, 0, 0, 0.24);
+  /** 蒙层 */
+  --mask: rgba(0, 0, 0, 0.20);
+  --mask2: rgba(0, 0, 0, 0.50);
+  --mask3: rgba(0, 0, 0, 0.80);
+  /** 字体 */
+  --font: #333333;
+  --font2: rgba(51, 51, 51, 0.60);
+  --font2: rgba(51, 51, 51, 0.20);
+  /** 灰色 */
+  --gray: #8e8e93;
+  --gray2: #aeaeb2;
+  --gray3: #c7c7cc;
+  --gray4: #d1d1d6;
+  --gray5: #e5e5ea;
+  --gray6: #f2f2f7;
+  /** 红色 */
+  --red: #ff3b30;
+  --red2: rgba(255, 59, 48, 0.60);
+  --red3: rgba(255, 59, 48, 0.20);
+  /** 橙色 */
+  --orange: #ff9500;
+  --orange2: rgba(255, 149, 0, 0.60);
+  --orange3: rgba(255, 149, 0, 0.20);
+  /** 黄色 */
+  --yellow: #ffcc00;
+  --yellow2: rgba(255, 204, 0, 0.60);
+  --yellow3: rgba(255, 204, 0, 0.20);
+  /** 绿色 */
+  --green: #34c759;
+  --green2: rgba(52, 199, 89, 0.60);
+  --green3: rgba(52, 199, 89, 0.20);
+  /** 青色 */
+  --cyan: #32ade6;
+  --cyan2: rgba(50, 173, 230, 0.60);
+  --cyan3: rgba(50, 173, 230, 0.20);
+  /** 蓝色 */
+  --blue: #007aff;
+  --blue2: rgba(0, 123, 255, 0.60);
+  --blue3: rgba(0, 123, 255, 0.20);
+  /** 紫色 */
+  --purple: #af52de;
+  --purple2: rgba(175, 82, 222, 0.60);
+  --purple3: rgba(175, 82, 222, 0.20);
+  /** 粉色 */
+  --pink: #ff2d55;
+  --pink2: rgba(255, 45, 85, 0.60);
+  --pink3: rgba(255, 45, 85, 0.20);
+  /** 棕色 */
+  --brown: #a2845e;
+  --brown2: rgba(162, 132, 94, 0.60);
+  --brown3: rgba(162, 132, 94, 0.20);
+  /** 靛蓝色 */
+  --indigo: #5856d6;
+  --indigo2: rgba(88, 86, 214, 0.60);
+  --indigo3: rgba(88, 86, 214, 0.20);
+  /** 薄荷色 */
+  --mint: #00c7be;
+  --mint2: rgba(0, 199, 190, 0.60);
+  --mint3: rgba(0, 199, 190, 0.20);
+  /** 水蓝色 */
+  --teal: #30b0c7;
+  --teal2: rgba(48, 176, 199, 0.60);
+  --teal3: rgba(48, 176, 199, 0.20);
+}
+
+@mixin dark {
+  /** 背景 */
+  --back: #000000;
+  --back2: #121212;
+  --back3: #242424;
+  /** 阴影 */
+  --shadow: rgba(0, 0, 0, 0.08);
+  --shadow2: rgba(0, 0, 0, 0.16);
+  --shadow3: rgba(0, 0, 0, 0.24);
+  /** 蒙层 */
+  --mask: rgba(255, 255, 255, 0.20);
+  --mask2: rgba(255, 255, 255, 0.50);
+  --mask3: rgba(255, 255, 255, 0.80);
+  /** 字体 */
+  --font: #cccccc;
+  --font2: rgba(204, 204, 204, 0.60);
+  --font2: rgba(204, 204, 204, 0.20);
+  /** 灰色 */
+  --gray: #8e8e93;
+  --gray2: #636366;
+  --gray3: #48484a;
+  --gray4: #3a3a3c;
+  --gray5: #2c2c2e;
+  --gray6: #1c1c1e;
+  /** 红色 */
+  --red: #ff453a;
+  --red2: rgba(255, 69, 58, 0.60);
+  --red3: rgba(255, 69, 58, 0.20);
+  /** 橙色 */
+  --orange: #ff9f0a;
+  --orange2: rgba(255, 159, 10, 0.60);
+  --orange3: rgba(255, 159, 10, 0.20);
+  /** 黄色 */
+  --yellow: #ffd60a;
+  --yellow2: rgba(255, 214, 10, 0.60);
+  --yellow3: rgba(255, 214, 10, 0.20);
+  /** 绿色 */
+  --green: #30d158;
+  --green2: rgba(48, 209, 88, 0.60);
+  --green3: rgba(48, 209, 88, 0.20);
+  /** 青色 */
+  --cyan: #64d2ff;
+  --cyan2: rgba(100, 210, 255, 0.60);
+  --cyan3: rgba(100, 210, 255, 0.20);
+  /** 蓝色 */
+  --blue: #0ab4ff;
+  --blue2: rgba(10, 180, 255, 0.60);
+  --blue3: rgba(10, 180, 255, 0.20);
+  /** 紫色 */
+  --purple: #bf5af2;
+  --purple2: rgba(191, 90, 242, 0.60);
+  --purple3: rgba(191, 90, 242, 0.20);
+  /** 粉色 */
+  --pink: #ff375f;
+  --pink2: rgba(255, 55, 95, 0.60);
+  --pink3: rgba(255, 55, 95, 0.20);
+  /** 棕色 */
+  --brown: #ac8e68;
+  --brown2: rgba(172, 142, 104, 0.60);
+  --brown3: rgba(172, 142, 104, 0.20);
+  /** 靛蓝色 */
+  --indigo: #515ce6;
+  --indigo2: rgba(81, 92, 230, 0.60);
+  --indigo3: rgba(81, 92, 230, 0.20);
+  /** 薄荷色 */
+  --mint: #63e6e2;
+  --mint2: rgba(99, 230, 226, 0.60);
+  --mint3: rgba(99, 230, 226, 0.20);
+  /** 水蓝色 */
+  --teal: #40cbe0;
+  --teal2: rgba(64, 203, 224, 0.60);
+  --teal3: rgba(64, 203, 224, 0.20);
+}
+
+.dark {
+  @include dark;
+}
+
+:root, .light {
+  @include light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark;
+  }
+  .light {
+    @include light;
+  }
+}
