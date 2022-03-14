@@ -1,5 +1,5 @@
 export { default as styles } from './theme.scss'
-export { getTheme, setTheme, useTheme } from './theme'
-export { SwitchTheme } from './switch-theme'
+export { SwitchColorMode, SwitchMainColor, SwitchTheme } from './switch-theme'
+export { getColorMode, getMainColor, setColorMode, setMainColor, useColorMode, useMainColor } from './theme'
 
-export type { StyleTheme } from './theme'
+export type { ColorMode, MainColor } from './theme'

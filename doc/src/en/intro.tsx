@@ -4,17 +4,15 @@ import { SwitchTheme } from 'xueyan-react-style'
 export default function Main() {
   return (
     <div>
-      <SwitchTheme
-        style={{ 
-          marginBottom: '16px' 
-        }}
-      />
+      <SwitchTheme />
       <div 
         style={{ 
-          width: '100px',
-          height: '80px',
+          marginTop: '16px',
+          width: '80px',
+          height: '60px',
+          boxSizing: 'border-box',
           background: 'var(--back)',
-          boxShadow: '0 0 4px var(--shadow)'
+          border: '4px solid var(--main)'
         }}
       />
     </div>
