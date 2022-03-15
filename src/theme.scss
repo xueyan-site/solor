@@ -99,7 +99,7 @@
   --main5: var(--blue5);
 }
 
-:root, .light {
+:root, .auto, .light {
   @include light;
 }
 
@@ -108,7 +108,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root, .auto {
     @include dark;
   }
   .light {
