@@ -1,4 +1,15 @@
-@mixin colorVariables($name, $color) {
+/** 升高不透明度 */
+@mixin opacityIncrementColors($name, $color) {
+  --#{$name}: #{transparentize($color, 0.1)};
+  --#{$name}1: #{transparentize($color, 0.2)};
+  --#{$name}2: #{transparentize($color, 0.4)};
+  --#{$name}3: #{transparentize($color, 0.6)};
+  --#{$name}4: #{transparentize($color, 0.8)};
+  --#{$name}5: #{$color};
+}
+
+/** 升高透明度 */
+@mixin opacityDecrementColors($name, $color) {
   --#{$name}: #{$color};
   --#{$name}1: #{transparentize($color, 0.8)};
   --#{$name}2: #{transparentize($color, 0.6)};
@@ -16,34 +27,38 @@
   --gray: #8e8e93;
   --gray1: #aeaeb2;
   --gray2: #c7c7cc;
-  /** 通道 */
-  @include colorVariables('alpha', #000);
+  /** 正调色 */
+  @include opacityIncrementColors('alpha', #fff);
+  /** 中调色 */
+  @include opacityIncrementColors('beta', #6c6c6c);
+  /** 反调色 */
+  @include opacityIncrementColors('gamma', #000);
   /** 字体 */
-  @include colorVariables('font', #333);
+  @include opacityDecrementColors('font', #333);
   /** 红色 */
-  @include colorVariables('red', #ff3b30);
+  @include opacityDecrementColors('red', #ff3b30);
   /** 橙色 */
-  @include colorVariables('orange', #ff9500);
+  @include opacityDecrementColors('orange', #ff9500);
   /** 黄色 */
-  @include colorVariables('yellow', #ffcc00);
+  @include opacityDecrementColors('yellow', #ffcc00);
   /** 绿色 */
-  @include colorVariables('green', #34c759);
+  @include opacityDecrementColors('green', #34c759);
   /** 青色 */
-  @include colorVariables('cyan', #32ade6);
+  @include opacityDecrementColors('cyan', #32ade6);
   /** 蓝色 */
-  @include colorVariables('blue', #007aff);
+  @include opacityDecrementColors('blue', #007aff);
   /** 紫色 */
-  @include colorVariables('purple', #af52de);
+  @include opacityDecrementColors('purple', #af52de);
   /** 粉色 */
-  @include colorVariables('pink', #ff2d55);
+  @include opacityDecrementColors('pink', #ff2d55);
   /** 棕色 */
-  @include colorVariables('brown', #a2845e);
+  @include opacityDecrementColors('brown', #a2845e);
   /** 靛蓝色 */
-  @include colorVariables('indigo', #5856d6);
+  @include opacityDecrementColors('indigo', #5856d6);
   /** 薄荷色 */
-  @include colorVariables('mint', #00c7be);
+  @include opacityDecrementColors('mint', #00c7be);
   /** 水蓝色 */
-  @include colorVariables('teal', #30b0c7);
+  @include opacityDecrementColors('teal', #30b0c7);
 }
 
 @mixin dark {
@@ -55,34 +70,38 @@
   --gray: #8e8e93;
   --gray1: #636366;
   --gray2: #48484a;
-  /** 通道 */
-  @include colorVariables('alpha', #fff);
+  /** 正调色 */
+  @include opacityIncrementColors('alpha', #fff);
+  /** 中调色 */
+  @include opacityIncrementColors('beta', #949494);
+  /** 反调色 */
+  @include opacityIncrementColors('gamma', #000);
   /** 字体 */
-  @include colorVariables('font', #ccc);
+  @include opacityDecrementColors('font', #ccc);
   /** 红色 */
-  @include colorVariables('red', #ff453a);
+  @include opacityDecrementColors('red', #ff453a);
   /** 橙色 */
-  @include colorVariables('orange', #ff9f0a);
+  @include opacityDecrementColors('orange', #ff9f0a);
   /** 黄色 */
-  @include colorVariables('yellow', #ffd60a);
+  @include opacityDecrementColors('yellow', #ffd60a);
   /** 绿色 */
-  @include colorVariables('green', #30d158);
+  @include opacityDecrementColors('green', #30d158);
   /** 青色 */
-  @include colorVariables('cyan', #64d2ff);
+  @include opacityDecrementColors('cyan', #64d2ff);
   /** 蓝色 */
-  @include colorVariables('blue', #0ab4ff);
+  @include opacityDecrementColors('blue', #0ab4ff);
   /** 紫色 */
-  @include colorVariables('purple', #bf5af2);
+  @include opacityDecrementColors('purple', #bf5af2);
   /** 粉色 */
-  @include colorVariables('pink', #ff375f);
+  @include opacityDecrementColors('pink', #ff375f);
   /** 棕色 */
-  @include colorVariables('brown', #ac8e68);
+  @include opacityDecrementColors('brown', #ac8e68);
   /** 靛蓝色 */
-  @include colorVariables('indigo', #515ce6);
+  @include opacityDecrementColors('indigo', #515ce6);
   /** 薄荷色 */
-  @include colorVariables('mint', #63e6e2);
+  @include opacityDecrementColors('mint', #63e6e2);
   /** 水蓝色 */
-  @include colorVariables('teal', #40cbe0);
+  @include opacityDecrementColors('teal', #40cbe0);
 }
 
 :root, .light, .dark {
