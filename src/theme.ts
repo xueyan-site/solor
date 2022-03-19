@@ -121,11 +121,11 @@ export function setMainColor(mainColor: MainColor) {
   }
   const dom = document.documentElement
   dom.style.setProperty('--main', `var(--${mainColor})`)
-  dom.style.setProperty('--main1', `var(--${mainColor})1`)
-  dom.style.setProperty('--main2', `var(--${mainColor})2`)
-  dom.style.setProperty('--main3', `var(--${mainColor})3`)
-  dom.style.setProperty('--main4', `var(--${mainColor})4`)
-  dom.style.setProperty('--main5', `var(--${mainColor})5`)
+  dom.style.setProperty('--main1', `var(--${mainColor}1)`)
+  dom.style.setProperty('--main2', `var(--${mainColor}2)`)
+  dom.style.setProperty('--main3', `var(--${mainColor}3)`)
+  dom.style.setProperty('--main4', `var(--${mainColor}4)`)
+  dom.style.setProperty('--main5', `var(--${mainColor}5)`)
 }
 
 export function useColorMode(): ColorMode {
