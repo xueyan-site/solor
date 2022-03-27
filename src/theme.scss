@@ -1,21 +1,11 @@
-/** 升高不透明度 */
-@mixin opacityIncrementColors($name, $color) {
-  --#{$name}: #{transparentize($color, 0.1)};
+/** 升高透明度 */
+@mixin transparents($name, $color) {
+  --#{$name}: #{$color};
   --#{$name}1: #{transparentize($color, 0.2)};
   --#{$name}2: #{transparentize($color, 0.4)};
   --#{$name}3: #{transparentize($color, 0.6)};
   --#{$name}4: #{transparentize($color, 0.8)};
-  --#{$name}5: #{$color};
-}
-
-/** 升高透明度 */
-@mixin opacityDecrementColors($name, $color) {
-  --#{$name}: #{$color};
-  --#{$name}1: #{transparentize($color, 0.8)};
-  --#{$name}2: #{transparentize($color, 0.6)};
-  --#{$name}3: #{transparentize($color, 0.4)};
-  --#{$name}4: #{transparentize($color, 0.2)};
-  --#{$name}5: #{transparentize($color, 0.1)};
+  --#{$name}5: #{transparentize($color, 0.9)};
 }
 
 @mixin light {
@@ -28,37 +18,37 @@
   --gray1: #aeaeb2;
   --gray2: #c7c7cc;
   /** 正调色 */
-  @include opacityIncrementColors('alpha', #fff);
+  @include transparents('alpha', #fff);
   /** 中调色 */
-  @include opacityIncrementColors('beta', #6c6c6c);
+  @include transparents('beta', #6c6c6c);
   /** 反调色 */
-  @include opacityIncrementColors('gamma', #000);
+  @include transparents('gamma', #000);
   /** 字体 */
-  @include opacityDecrementColors('font', #333);
+  @include transparents('font', #333);
   /** 红色 */
-  @include opacityDecrementColors('red', #ff3b30);
+  @include transparents('red', #ff3b30);
   /** 橙色 */
-  @include opacityDecrementColors('orange', #ff9500);
+  @include transparents('orange', #ff9500);
   /** 黄色 */
-  @include opacityDecrementColors('yellow', #ffcc00);
+  @include transparents('yellow', #ffcc00);
   /** 绿色 */
-  @include opacityDecrementColors('green', #34c759);
+  @include transparents('green', #34c759);
   /** 青色 */
-  @include opacityDecrementColors('cyan', #32ade6);
+  @include transparents('cyan', #32ade6);
   /** 蓝色 */
-  @include opacityDecrementColors('blue', #007aff);
+  @include transparents('blue', #007aff);
   /** 紫色 */
-  @include opacityDecrementColors('purple', #af52de);
+  @include transparents('purple', #af52de);
   /** 粉色 */
-  @include opacityDecrementColors('pink', #ff2d55);
+  @include transparents('pink', #ff2d55);
   /** 棕色 */
-  @include opacityDecrementColors('brown', #a2845e);
+  @include transparents('brown', #a2845e);
   /** 靛蓝色 */
-  @include opacityDecrementColors('indigo', #5856d6);
+  @include transparents('indigo', #5856d6);
   /** 薄荷色 */
-  @include opacityDecrementColors('mint', #00c7be);
+  @include transparents('mint', #00c7be);
   /** 水蓝色 */
-  @include opacityDecrementColors('teal', #30b0c7);
+  @include transparents('teal', #30b0c7);
 }
 
 @mixin dark {
@@ -71,37 +61,37 @@
   --gray1: #636366;
   --gray2: #48484a;
   /** 正调色 */
-  @include opacityIncrementColors('alpha', #fff);
+  @include transparents('alpha', #fff);
   /** 中调色 */
-  @include opacityIncrementColors('beta', #949494);
+  @include transparents('beta', #949494);
   /** 反调色 */
-  @include opacityIncrementColors('gamma', #000);
+  @include transparents('gamma', #000);
   /** 字体 */
-  @include opacityDecrementColors('font', #ccc);
+  @include transparents('font', #ccc);
   /** 红色 */
-  @include opacityDecrementColors('red', #ff453a);
+  @include transparents('red', #ff453a);
   /** 橙色 */
-  @include opacityDecrementColors('orange', #ff9f0a);
+  @include transparents('orange', #ff9f0a);
   /** 黄色 */
-  @include opacityDecrementColors('yellow', #ffd60a);
+  @include transparents('yellow', #ffd60a);
   /** 绿色 */
-  @include opacityDecrementColors('green', #30d158);
+  @include transparents('green', #30d158);
   /** 青色 */
-  @include opacityDecrementColors('cyan', #64d2ff);
+  @include transparents('cyan', #64d2ff);
   /** 蓝色 */
-  @include opacityDecrementColors('blue', #0ab4ff);
+  @include transparents('blue', #0ab4ff);
   /** 紫色 */
-  @include opacityDecrementColors('purple', #bf5af2);
+  @include transparents('purple', #bf5af2);
   /** 粉色 */
-  @include opacityDecrementColors('pink', #ff375f);
+  @include transparents('pink', #ff375f);
   /** 棕色 */
-  @include opacityDecrementColors('brown', #ac8e68);
+  @include transparents('brown', #ac8e68);
   /** 靛蓝色 */
-  @include opacityDecrementColors('indigo', #515ce6);
+  @include transparents('indigo', #515ce6);
   /** 薄荷色 */
-  @include opacityDecrementColors('mint', #63e6e2);
+  @include transparents('mint', #63e6e2);
   /** 水蓝色 */
-  @include opacityDecrementColors('teal', #40cbe0);
+  @include transparents('teal', #40cbe0);
 }
 
 :root, .light, .dark {
