@@ -18,11 +18,11 @@
   --gray1: #aeaeb2;
   --gray2: #c7c7cc;
   /** 正调色 */
-  @include transparents('alpha', #fff);
+  @include transparents('alpha', #000);
   /** 中调色 */
   @include transparents('beta', #6c6c6c);
   /** 反调色 */
-  @include transparents('gamma', #000);
+  @include transparents('gamma', #fff);
   /** 字体 */
   @include transparents('font', #333);
   /** 红色 */
@@ -54,8 +54,8 @@
 @mixin dark {
   /** 背景 */
   --back: #000000;
-  --back1: #121212;
-  --back2: #242424;
+  --back1: #12151d;
+  --back2: #24272f;
   /** 灰色 */
   --gray: #8e8e93;
   --gray1: #636366;
