@@ -1,11 +1,23 @@
-/** 升高透明度 */
-@mixin transparents($name, $color) {
+@mixin transparents($name, $start, $color) {
+  --#{$name}#{$start}: #{transparentize($color, 0.2)};
+  --#{$name}#{$start + 1}: #{transparentize($color, 0.4)};
+  --#{$name}#{$start + 2}: #{transparentize($color, 0.6)};
+  --#{$name}#{$start + 3}: #{transparentize($color, 0.8)};
+  --#{$name}#{$start + 4}: #{transparentize($color, 0.9)};
+}
+
+@mixin mixins($name, $start, $color, $back) {
+  --#{$name}#{$start}: #{mix($color, $back, 80%)};
+  --#{$name}#{$start + 1}: #{mix($color, $back, 60%)};
+  --#{$name}#{$start + 2}: #{mix($color, $back, 40%)};
+  --#{$name}#{$start + 3}: #{mix($color, $back, 20%)};
+  --#{$name}#{$start + 4}: #{mix($color, $back, 10%)};
+}
+
+@mixin palette($name, $color, $back) {
   --#{$name}: #{$color};
-  --#{$name}1: #{transparentize($color, 0.2)};
-  --#{$name}2: #{transparentize($color, 0.4)};
-  --#{$name}3: #{transparentize($color, 0.6)};
-  --#{$name}4: #{transparentize($color, 0.8)};
-  --#{$name}5: #{transparentize($color, 0.9)};
+  @include transparents($name, 1, $color);
+  @include mixins($name, 6, $color, $back);
 }
 
 @mixin light {
@@ -13,92 +25,80 @@
   --back: #e6e9f0;
   --back1: #edf0f6;
   --back2: #fff;
-  /** 灰色 */
-  --gray: #8e8e93;
-  --gray1: #aeaeb2;
-  --gray2: #c7c7cc;
-  /** 正调色 */
-  @include transparents('alpha', #000);
-  /** 中调色 */
-  @include transparents('beta', #6c6c6c);
-  /** 反调色 */
-  @include transparents('gamma', #fff);
   /** 字体 */
-  @include transparents('font', #333);
+  @include palette('font', #333, #ccc);
+  /** 正调色 */
+  @include palette('alpha', #000, #333);
+  /** 中调色 */
+  @include palette('beta', #6c6c6c, #fff);
+  /** 反调色 */
+  @include palette('gamma', #fff, #ccc);
   /** 红色 */
-  @include transparents('red', #ff3b30);
+  @include palette('red', #ff3b30, #fff);
   /** 橙色 */
-  @include transparents('orange', #ff9500);
+  @include palette('orange', #ff9500, #fff);
   /** 黄色 */
-  @include transparents('yellow', #ffcc00);
+  @include palette('yellow', #ffcc00, #fff);
   /** 绿色 */
-  @include transparents('green', #34c759);
+  @include palette('green', #34c759, #fff);
   /** 青色 */
-  @include transparents('cyan', #32ade6);
+  @include palette('cyan', #32ade6, #fff);
   /** 蓝色 */
-  @include transparents('blue', #007aff);
+  @include palette('blue', #007aff, #fff);
   /** 紫色 */
-  @include transparents('purple', #af52de);
+  @include palette('purple', #af52de, #fff);
   /** 粉色 */
-  @include transparents('pink', #ff2d55);
+  @include palette('pink', #ff2d55, #fff);
   /** 棕色 */
-  @include transparents('brown', #a2845e);
+  @include palette('brown', #a2845e, #fff);
   /** 靛蓝色 */
-  @include transparents('indigo', #5856d6);
+  @include palette('indigo', #5856d6, #fff);
   /** 薄荷色 */
-  @include transparents('mint', #00c7be);
+  @include palette('mint', #00c7be, #fff);
   /** 水蓝色 */
-  @include transparents('teal', #30b0c7);
+  @include palette('teal', #30b0c7, #fff);
 }
 
 @mixin dark {
   /** 背景 */
-  --back: #000000;
+  --back: #000;
   --back1: #12151d;
   --back2: #24272f;
-  /** 灰色 */
-  --gray: #8e8e93;
-  --gray1: #636366;
-  --gray2: #48484a;
-  /** 正调色 */
-  @include transparents('alpha', #fff);
-  /** 中调色 */
-  @include transparents('beta', #949494);
-  /** 反调色 */
-  @include transparents('gamma', #000);
   /** 字体 */
-  @include transparents('font', #ccc);
+  @include palette('font', #ccc, #333);
+  /** 正调色 */
+  @include palette('alpha', #fff, #ccc);
+  /** 中调色 */
+  @include palette('beta', #949494, #000);
+  /** 反调色 */
+  @include palette('gamma', #000, #333);
   /** 红色 */
-  @include transparents('red', #ff453a);
+  @include palette('red', #ff453a, #000);
   /** 橙色 */
-  @include transparents('orange', #ff9f0a);
+  @include palette('orange', #ff9f0a, #000);
   /** 黄色 */
-  @include transparents('yellow', #ffd60a);
+  @include palette('yellow', #ffd60a, #000);
   /** 绿色 */
-  @include transparents('green', #30d158);
+  @include palette('green', #30d158, #000);
   /** 青色 */
-  @include transparents('cyan', #64d2ff);
+  @include palette('cyan', #64d2ff, #000);
   /** 蓝色 */
-  @include transparents('blue', #0ab4ff);
+  @include palette('blue', #0ab4ff, #000);
   /** 紫色 */
-  @include transparents('purple', #bf5af2);
+  @include palette('purple', #bf5af2, #000);
   /** 粉色 */
-  @include transparents('pink', #ff375f);
+  @include palette('pink', #ff375f, #000);
   /** 棕色 */
-  @include transparents('brown', #ac8e68);
+  @include palette('brown', #ac8e68, #000);
   /** 靛蓝色 */
-  @include transparents('indigo', #515ce6);
+  @include palette('indigo', #515ce6, #000);
   /** 薄荷色 */
-  @include transparents('mint', #63e6e2);
+  @include palette('mint', #63e6e2, #000);
   /** 水蓝色 */
-  @include transparents('teal', #40cbe0);
+  @include palette('teal', #40cbe0, #000);
 }
 
 :root, .light, .dark {
-  /** 阴影 */
-  --shadow: rgba(0, 0, 0, 0.08);
-  --shadow1: rgba(0, 0, 0, 0.16);
-  --shadow2: rgba(0, 0, 0, 0.24);
   /** 主色 */
   --main: var(--blue);
   --main1: var(--blue1);
@@ -106,6 +106,11 @@
   --main3: var(--blue3);
   --main4: var(--blue4);
   --main5: var(--blue5);
+  --main6: var(--blue6);
+  --main7: var(--blue7);
+  --main8: var(--blue8);
+  --main9: var(--blue9);
+  --main10: var(--blue10);
 }
 
 :root, .auto, .light {

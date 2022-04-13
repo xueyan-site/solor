@@ -126,6 +126,11 @@ export function setMainColor(mainColor: MainColor) {
   dom.style.setProperty('--main3', `var(--${mainColor}3)`)
   dom.style.setProperty('--main4', `var(--${mainColor}4)`)
   dom.style.setProperty('--main5', `var(--${mainColor}5)`)
+  dom.style.setProperty('--main6', `var(--${mainColor}6)`)
+  dom.style.setProperty('--main7', `var(--${mainColor}7)`)
+  dom.style.setProperty('--main8', `var(--${mainColor}8)`)
+  dom.style.setProperty('--main9', `var(--${mainColor}9)`)
+  dom.style.setProperty('--main10', `var(--${mainColor}10)`)
 }
 
 export function useColorMode(): ColorMode {
