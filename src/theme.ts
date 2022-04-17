@@ -54,9 +54,9 @@ export function getColorMode(): ColorMode {
   } else {
     const root = document.documentElement
     const rootCL = root.classList
-    return rootCL.contains(styles.dark)
+    return rootCL.contains(styles.xrdark)
       ? 'dark'
-      : rootCL.contains(styles.light)
+      : rootCL.contains(styles.xrlight)
       ? 'light'
       : 'auto'
   }
@@ -88,19 +88,19 @@ export function setColorMode(colorMode: ColorMode) {
   const dom = document.documentElement
   let domCN = dom.className
   if (domCN) {
-    if (domCN.includes(styles.dark)) {
-      domCN = domCN.replace(styles.dark, '')
+    if (domCN.includes(styles.xrdark)) {
+      domCN = domCN.replace(styles.xrdark, '')
     }
-    if (domCN.includes(styles.light)) {
-      domCN = domCN.replace(styles.light, '')
+    if (domCN.includes(styles.xrlight)) {
+      domCN = domCN.replace(styles.xrlight, '')
     }
   }
   domCN = cn(
     domCN,
     colorMode === 'dark' 
-      ? styles.dark 
+      ? styles.xrdark 
       : colorMode === 'light'
-      ? styles.light
+      ? styles.xrlight
       : ''
   )
   if (domCN) {
