@@ -22,9 +22,9 @@ export type MainColor =
   | 'mint' 
   | 'teal'
 
-const COLOR_MODE_KEY = '_xr_style_3Kv8ge'
+const COLOR_MODE_KEY = 'xrstylecolormode'
 
-const MAIN_COLOR_KEY = '_xr_style_ciY2nq'
+const MAIN_COLOR_KEY = 'xrstylemaincolor'
 
 const eventBus = new EventEmitter()
 
