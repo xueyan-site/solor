@@ -54,25 +54,11 @@ export function getColorMode(): ColorMode {
   } else {
     const root = document.documentElement
     const rootCL = root.classList
-    return rootCL.contains(styles.xrdark)
+    return rootCL.contains(styles.xrstyledark)
       ? 'dark'
-      : rootCL.contains(styles.xrlight)
+      : rootCL.contains(styles.xrstylelight)
       ? 'light'
       : 'auto'
-  }
-}
-
-/**
- * 获取页面主色
- */
-export function getMainColor(): MainColor {
-  if ((window as any)[MAIN_COLOR_KEY]) {
-    return (window as any)[MAIN_COLOR_KEY]
-  }  else if (localStorage) {
-    const theme = localStorage.getItem(MAIN_COLOR_KEY)
-    return (theme as any) || 'blue'
-  } else {
-    return 'blue'
   }
 }
 
@@ -88,25 +74,39 @@ export function setColorMode(colorMode: ColorMode) {
   const dom = document.documentElement
   let domCN = dom.className
   if (domCN) {
-    if (domCN.includes(styles.xrdark)) {
-      domCN = domCN.replace(styles.xrdark, '')
+    if (domCN.includes(styles.xrstyledark)) {
+      domCN = domCN.replace(styles.xrstyledark, '')
     }
-    if (domCN.includes(styles.xrlight)) {
-      domCN = domCN.replace(styles.xrlight, '')
+    if (domCN.includes(styles.xrstylelight)) {
+      domCN = domCN.replace(styles.xrstylelight, '')
     }
   }
   domCN = cn(
     domCN,
     colorMode === 'dark' 
-      ? styles.xrdark 
+      ? styles.xrstyledark 
       : colorMode === 'light'
-      ? styles.xrlight
+      ? styles.xrstylelight
       : ''
   )
   if (domCN) {
     dom.setAttribute('class', domCN)
   } else {
     dom.removeAttribute('class')
+  }
+}
+
+/**
+ * 获取页面主色
+ */
+export function getMainColor(): MainColor {
+  if ((window as any)[MAIN_COLOR_KEY]) {
+    return (window as any)[MAIN_COLOR_KEY]
+  }  else if (localStorage) {
+    const theme = localStorage.getItem(MAIN_COLOR_KEY)
+    return (theme as any) || 'blue'
+  } else {
+    return 'blue'
   }
 }
 

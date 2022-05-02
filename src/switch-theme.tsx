@@ -25,7 +25,7 @@ export function SwitchColorMode({
     <img
       style={style}
       title={colorMode}
-      className={cn(styles.xrcolormode, className)}
+      className={cn(styles.xrstylecolormode, className)}
       src={
         colorMode === 'dark' 
           ? DARK_IMG
@@ -55,13 +55,13 @@ export function SwitchMainColor({
 }) {
   const mainColor = useMainColor()
   return (
-    <div style={style} className={cn(styles.xrcolormatrix, className)}>
+    <div style={style} className={cn(styles.xrstylemaincolor, className)}>
       {MAIN_COLOR_MATRIX.map((list, index) => (
         <div key={index} className={styles.colorlist}>
           {list.map(item => (
             <div
               key={item}
-              className={styles.maincolor}
+              className={styles.color}
               title={item}
               style={{
                 backgroundColor: `var(--${item === mainColor ? 'back' : item})`,
@@ -88,7 +88,7 @@ export function SwitchTheme({
   return (
     <div 
       style={style}
-      className={cn(styles.xrswitchtheme, className)}
+      className={cn(styles.xrstyleswitchtheme, className)}
     >
       <SwitchColorMode />
       <SwitchMainColor />

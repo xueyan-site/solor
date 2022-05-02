@@ -20,7 +20,7 @@
   @include mixins($name, 6, $color, $back);
 }
 
-@mixin light {
+@mixin lighttheme {
   /** 背景 */
   --back: #e6e9f0;
   --back1: #edf0f6;
@@ -59,7 +59,7 @@
   @include palette('teal', #30b0c7, #fff);
 }
 
-@mixin dark {
+@mixin darktheme {
   /** 背景 */
   --back: #000;
   --back1: #12151d;
@@ -98,7 +98,7 @@
   @include palette('teal', #40cbe0, #000);
 }
 
-:root, .xrlight, .xrdark {
+:root, .xrstyleauto, .xrstylelight, .xrstyledark {
   /** 主色 */
   --main: var(--blue);
   --main1: var(--blue1);
@@ -113,19 +113,19 @@
   --main10: var(--blue10);
 }
 
-:root, .xrauto, .xrlight {
-  @include light;
+:root, .xrstyleauto, .xrstylelight {
+  @include lighttheme;
 }
 
-.xrdark {
-  @include dark;
+.xrstyledark {
+  @include darktheme;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root, .xrauto {
-    @include dark;
+  :root, .xrstyleauto {
+    @include darktheme;
   }
-  .xrlight {
-    @include light;
+  .xrstylelight {
+    @include lighttheme;
   }
 }
