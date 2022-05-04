@@ -6,20 +6,19 @@ function ColorItem({
 }: {
   name: string
 }) {
-  const color = `var(--${name})`
   return (
-    <div style={{ width: '60px' }}>
-      <div style={{ fontSize: '12px' }}>{name}</div>
-      <div 
-        style={{ 
-          width: '40px',
-          height: '40px',
-          backgroundColor: color 
-        }} 
-        onClick={() => { 
-          console.log(color) 
-        }}
-      />
+    <div 
+      style={{ 
+        width: '60px',
+        height: '20px',
+        padding: '0 8px',
+        fontSize: '12px',
+        lineHeight: '20px',
+        color: `var(--font)`,
+        backgroundColor: `var(--${name})`,
+      }}
+    >
+      {name}
     </div>
   )
 }
@@ -33,7 +32,7 @@ function ColorBlock({
 }) {
   const maxLine = Math.ceil(maxNum / 5)
   return (
-    <div style={{ marginTop: '16px', display: 'flex' }}>
+    <div style={{ display: 'flex' }}>
       <ColorItem name={name} />
       <div>
         {Array(maxLine).fill(null).map((_i, i) => (
@@ -53,26 +52,22 @@ function ColorBlock({
 
 export default function Main() {
   return (
-    <div style={{ backgroundColor: 'var(--back)' }}>
-      <SwitchTheme />
-      {/* <div style={THEME_DISPLAY_STYLE} /> */}
-
+    <div 
+      style={{ 
+        backgroundColor: 'var(--base)',
+        padding: '16px'
+      }}
+    >
+      <SwitchTheme style={{ width: '240px' }} />
       {[
-        'back',
+        'base',
+        'font',
+        'mask',
       ].map((name) => (
         <ColorBlock key={name} name={name} maxNum={2} />
       ))}
-
       {[
-        'font',
-        'alpha',
-        'beta',
-        'gamma'
-      ].map((name) => (
-        <ColorBlock key={name} name={name} maxNum={10} />
-      ))}
-
-      {[
+        'area',
         'red',
         'orange',
         'yellow',

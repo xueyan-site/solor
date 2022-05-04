@@ -1,0 +1,68 @@
+$lightbase: #fff;
+
+@function lightmixin($color, $ratio) {
+  @return mix($color, $lightbase, $ratio);
+}
+
+@function lightopacify($color, $opacity) {
+  @return transparentize($color, 1 - $opacity);
+}
+
+@function lightmixinopacify($color, $ratio, $opacity) {
+  @return lightopacify(lightmixin($color, $ratio), $opacity);
+}
+
+@mixin lightpalette($name, $color) {
+  --#{$name}: #{$color};
+  --#{$name}1: #{lightopacify($color, 0.08)};
+  --#{$name}2: #{lightopacify($color, 0.18)};
+  --#{$name}3: #{lightopacify($color, 0.32)};
+  --#{$name}4: #{lightopacify($color, 0.5)};
+  --#{$name}5: #{lightopacify($color, 0.72)};
+  --#{$name}6: #{lightmixin($color, 8%)};
+  --#{$name}7: #{lightmixin($color, 18%)};
+  --#{$name}8: #{lightmixin($color, 32%)};
+  --#{$name}9: #{lightmixin($color, 50%)};
+  --#{$name}10: #{lightmixin($color, 72%)};
+}
+
+@mixin lighttheme {
+  /** 基调 */
+  --base: #{$lightbase};
+  --base1: #{lightmixin(#38f, 5%)};
+  --base2: #{lightmixin(#38f, 10%)};
+  /** 字体 */
+  --font: #{lightmixinopacify(#090d12, 84%, 0.9)};
+  --font1: #{lightmixinopacify(#090d12, 84%, 0.6)};
+  --font2: #{lightmixinopacify(#090d12, 84%, 0.3)};
+  /** 蒙层 */
+  --mask: #{lightmixinopacify(#00060a, 90%, 0.7)};
+  --mask1: #{lightmixinopacify(#00060a, 90%, 0.5)};
+  --mask2: #{lightmixinopacify(#00060a, 90%, 0.3)};
+  /** 盒子 */
+  @include lightpalette('area', lightmixin(#00060a, 90%));
+  /** 红色 */
+  @include lightpalette('red', lightmixin(#ff3b30, 90%));
+  /** 橙色 */
+  @include lightpalette('orange', lightmixin(#ff9500, 90%));
+  /** 黄色 */
+  @include lightpalette('yellow', lightmixin(#ffcc00, 90%));
+  /** 绿色 */
+  @include lightpalette('green', lightmixin(#34c759, 90%));
+  /** 青色 */
+  @include lightpalette('cyan', lightmixin(#32ade6, 90%));
+  /** 蓝色 */
+  @include lightpalette('blue', lightmixin(#007aff, 90%));
+  /** 紫色 */
+  @include lightpalette('purple', lightmixin(#af52de, 90%));
+  /** 粉色 */
+  @include lightpalette('pink', lightmixin(#ff2d55, 90%));
+  /** 棕色 */
+  @include lightpalette('brown', lightmixin(#a2845e, 90%));
+  /** 靛蓝色 */
+  @include lightpalette('indigo', lightmixin(#5856d6, 90%));
+  /** 薄荷色 */
+  @include lightpalette('mint', lightmixin(#00c7be, 90%));
+  /** 水蓝色 */
+  @include lightpalette('teal', lightmixin(#30b0c7, 90%));
+}
