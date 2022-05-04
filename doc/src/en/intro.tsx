@@ -59,30 +59,22 @@ export default function Main() {
       }}
     >
       <SwitchTheme style={{ width: '240px' }} />
-      {[
-        'base',
-        'font',
-        'mask',
-      ].map((name) => (
-        <ColorBlock key={name} name={name} maxNum={2} />
-      ))}
-      {[
-        'area',
-        'red',
-        'orange',
-        'yellow',
-        'green',
-        'cyan',
-        'blue',
-        'purple',
-        'pink',
-        'brown',
-        'indigo',
-        'mint',
-        'teal'
-      ].map((name) => (
-        <ColorBlock key={name} name={name} maxNum={10} />
-      ))}
+      <ColorBlock name="base" maxNum={2} />
+      <ColorBlock name="font" maxNum={3} />
+      <ColorBlock name="mask" maxNum={4} />
+      <ColorBlock name="area" maxNum={10} />
+      <ColorBlock name="red" maxNum={10} />
+      <ColorBlock name="orange" maxNum={10} />
+      <ColorBlock name="yellow" maxNum={10} />
+      <ColorBlock name="green" maxNum={10} />
+      <ColorBlock name="cyan" maxNum={10} />
+      <ColorBlock name="blue" maxNum={10} />
+      <ColorBlock name="purple" maxNum={10} />
+      <ColorBlock name="pink" maxNum={10} />
+      <ColorBlock name="brown" maxNum={10} />
+      <ColorBlock name="indigo" maxNum={10} />
+      <ColorBlock name="mint" maxNum={10} />
+      <ColorBlock name="teal" maxNum={10} />
     </div>
   )
 }

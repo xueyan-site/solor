@@ -33,12 +33,15 @@ $lightbase: #fff;
   --base2: #{lightmixin(#38f, 10%)};
   /** 字体 */
   --font: #{lightmixinopacify(#090d12, 84%, 0.9)};
-  --font1: #{lightmixinopacify(#090d12, 84%, 0.6)};
-  --font2: #{lightmixinopacify(#090d12, 84%, 0.3)};
+  --font1: #{lightmixinopacify(#090d12, 84%, 0.68)};
+  --font2: #{lightmixinopacify(#090d12, 84%, 0.46)};
+  --font3: #{lightmixinopacify(#090d12, 84%, 0.24)};
   /** 蒙层 */
-  --mask: #{lightmixinopacify(#00060a, 90%, 0.7)};
+  --mask: #{lightmixinopacify(#00060a, 90%, 0.72)};
   --mask1: #{lightmixinopacify(#00060a, 90%, 0.5)};
-  --mask2: #{lightmixinopacify(#00060a, 90%, 0.3)};
+  --mask2: #{lightmixinopacify(#00060a, 90%, 0.32)};
+  --mask3: #{lightmixinopacify(#00060a, 90%, 0.18)};
+  --mask4: #{lightmixinopacify(#00060a, 90%, 0.08)};
   /** 盒子 */
   @include lightpalette('area', lightmixin(#00060a, 90%));
   /** 红色 */

@@ -33,12 +33,15 @@ $darkbase: #0D1117;
   --base2: #{darkmixin(#def, 10%)};
   /** 字体 */
   --font: #{darkmixinopacify(#f0f8ff, 84%, 0.9)};
-  --font1: #{darkmixinopacify(#f0f8ff, 84%, 0.6)};
-  --font2: #{darkmixinopacify(#f0f8ff, 84%, 0.3)};
+  --font1: #{darkmixinopacify(#f0f8ff, 84%, 0.68)};
+  --font2: #{darkmixinopacify(#f0f8ff, 84%, 0.46)};
+  --font3: #{darkmixinopacify(#f0f8ff, 84%, 0.24)};
   /** 蒙层 */
-  --mask: #{darkmixinopacify(#00060a, 90%, 0.7)};
+  --mask: #{darkmixinopacify(#00060a, 90%, 0.72)};
   --mask1: #{darkmixinopacify(#00060a, 90%, 0.5)};
-  --mask2: #{darkmixinopacify(#00060a, 90%, 0.3)};
+  --mask2: #{darkmixinopacify(#00060a, 90%, 0.32)};
+  --mask3: #{darkmixinopacify(#00060a, 90%, 0.18)};
+  --mask4: #{darkmixinopacify(#00060a, 90%, 0.08)};
   /** 盒子 */
   @include darkpalette('area', darkmixin(#f3f9ff, 90%));
   /** 红色 */
