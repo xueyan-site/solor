@@ -34,15 +34,15 @@ function Label({
 const COLOR_MODE_OPTIONS: SelectOption<ColorMode>[] = [
   {
     value: 'light',
-    label: <Label icon={<SunIcon/>}>light</Label>
+    label: <Label icon={<SunIcon color="var(--red5)"/>}>light</Label>
   },
   {
     value: 'dark',
-    label: <Label icon={<MoonIcon/>}>dark</Label>
+    label: <Label icon={<MoonIcon color="var(--blue5)" />}>dark</Label>
   },
   {
     value: 'auto',
-    label: <Label icon={<StarIcon/>}>auto</Label>
+    label: <Label icon={<StarIcon color="var(--orange5)"/>}>auto</Label>
   }
 ]
 
