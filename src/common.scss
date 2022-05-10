@@ -1,0 +1,25 @@
+@function baseopa($color, $opacity) {
+  @return transparentize($color, 1 - $opacity);
+}
+
+@function basemix($color, $base, $ratio) {
+  @return mix($color, $base, $ratio);
+}
+
+@function basemixopa($color, $base, $ratio, $opacity) {
+  @return baseopa(basemix($color, $base, $ratio), $opacity);
+}
+
+@mixin basepalette($name, $color, $base) {
+  --#{$name}: #{$color};
+  --#{$name}1: #{baseopa($color, 0.08)};
+  --#{$name}2: #{baseopa($color, 0.18)};
+  --#{$name}3: #{baseopa($color, 0.32)};
+  --#{$name}4: #{baseopa($color, 0.5)};
+  --#{$name}5: #{baseopa($color, 0.72)};
+  --#{$name}6: #{basemix($color, $base, 8%)};
+  --#{$name}7: #{basemix($color, $base, 18%)};
+  --#{$name}8: #{basemix($color, $base, 32%)};
+  --#{$name}9: #{basemix($color, $base, 50%)};
+  --#{$name}10: #{basemix($color, $base, 72%)};
+}

@@ -1,71 +1,81 @@
+@import './common.scss';
+
 $lightbase: #fff;
 
-@function lightmixin($color, $ratio) {
-  @return mix($color, $lightbase, $ratio);
+@function lightmix($color, $ratio) {
+  @return basemix($color, $lightbase, $ratio);
 }
 
-@function lightopacify($color, $opacity) {
-  @return transparentize($color, 1 - $opacity);
-}
-
-@function lightmixinopacify($color, $ratio, $opacity) {
-  @return lightopacify(lightmixin($color, $ratio), $opacity);
+@function lightmixopa($color, $ratio, $opacity) {
+  @return basemixopa($color, $lightbase, $ratio, $opacity);
 }
 
 @mixin lightpalette($name, $color) {
   --#{$name}: #{$color};
-  --#{$name}1: #{lightopacify($color, 0.08)};
-  --#{$name}2: #{lightopacify($color, 0.18)};
-  --#{$name}3: #{lightopacify($color, 0.32)};
-  --#{$name}4: #{lightopacify($color, 0.5)};
-  --#{$name}5: #{lightopacify($color, 0.72)};
-  --#{$name}6: #{lightmixin($color, 8%)};
-  --#{$name}7: #{lightmixin($color, 18%)};
-  --#{$name}8: #{lightmixin($color, 32%)};
-  --#{$name}9: #{lightmixin($color, 50%)};
-  --#{$name}10: #{lightmixin($color, 72%)};
+  --#{$name}1: #{baseopa($color, 0.08)};
+  --#{$name}2: #{baseopa($color, 0.18)};
+  --#{$name}3: #{baseopa($color, 0.32)};
+  --#{$name}4: #{baseopa($color, 0.5)};
+  --#{$name}5: #{baseopa($color, 0.72)};
+  --#{$name}6: #{lightmix($color, 8%)};
+  --#{$name}7: #{lightmix($color, 18%)};
+  --#{$name}8: #{lightmix($color, 32%)};
+  --#{$name}9: #{lightmix($color, 50%)};
+  --#{$name}10: #{lightmix($color, 72%)};
+}
+
+@mixin lightcolors {
+  /** 红色 */
+  @include lightpalette('red', lightmix(#ff3b30, 90%));
+  /** 橙色 */
+  @include lightpalette('orange', lightmix(#ff9500, 90%));
+  /** 黄色 */
+  @include lightpalette('yellow', lightmix(#ffcc00, 90%));
+  /** 绿色 */
+  @include lightpalette('green', lightmix(#34c759, 90%));
+  /** 青色 */
+  @include lightpalette('cyan', lightmix(#32ade6, 90%));
+  /** 蓝色 */
+  @include lightpalette('blue', lightmix(#007aff, 90%));
+  /** 紫色 */
+  @include lightpalette('purple', lightmix(#af52de, 90%));
+  /** 粉色 */
+  @include lightpalette('pink', lightmix(#ff2d55, 90%));
+  /** 棕色 */
+  @include lightpalette('brown', lightmix(#a2845e, 90%));
+  /** 靛蓝色 */
+  @include lightpalette('indigo', lightmix(#5856d6, 90%));
+  /** 薄荷色 */
+  @include lightpalette('mint', lightmix(#00c7be, 90%));
+  /** 水蓝色 */
+  @include lightpalette('teal', lightmix(#30b0c7, 90%));
+}
+
+@mixin lightsolids {
+  /** 盒子 */
+  @include lightpalette('area', lightmix(#00060a, 90%));
+  /** 白色 */
+  @include basepalette('white', $lightbase, lightmix(#00060a, 30%));
 }
 
 @mixin lighttheme {
   /** 基调 */
   --base: #{$lightbase};
-  --base1: #{lightmixin(#38f, 5%)};
-  --base2: #{lightmixin(#38f, 10%)};
+  --base1: #{lightmix(#3388ff, 5%)};
+  --base2: #{lightmix(#3388ff, 10%)};
   /** 字体 */
-  --font: #{lightmixinopacify(#090d12, 84%, 0.9)};
-  --font1: #{lightmixinopacify(#090d12, 84%, 0.68)};
-  --font2: #{lightmixinopacify(#090d12, 84%, 0.46)};
-  --font3: #{lightmixinopacify(#090d12, 84%, 0.24)};
+  --font: #{lightmixopa(#090d12, 84%, 0.9)};
+  --font1: #{lightmixopa(#090d12, 84%, 0.68)};
+  --font2: #{lightmixopa(#090d12, 84%, 0.46)};
+  --font3: #{lightmixopa(#090d12, 84%, 0.24)};
   /** 蒙层 */
-  --mask: #{lightmixinopacify(#00060a, 90%, 0.72)};
-  --mask1: #{lightmixinopacify(#00060a, 90%, 0.5)};
-  --mask2: #{lightmixinopacify(#00060a, 90%, 0.32)};
-  --mask3: #{lightmixinopacify(#00060a, 90%, 0.18)};
-  --mask4: #{lightmixinopacify(#00060a, 90%, 0.08)};
-  /** 盒子 */
-  @include lightpalette('area', lightmixin(#00060a, 90%));
-  /** 红色 */
-  @include lightpalette('red', lightmixin(#ff3b30, 90%));
-  /** 橙色 */
-  @include lightpalette('orange', lightmixin(#ff9500, 90%));
-  /** 黄色 */
-  @include lightpalette('yellow', lightmixin(#ffcc00, 90%));
-  /** 绿色 */
-  @include lightpalette('green', lightmixin(#34c759, 90%));
-  /** 青色 */
-  @include lightpalette('cyan', lightmixin(#32ade6, 90%));
-  /** 蓝色 */
-  @include lightpalette('blue', lightmixin(#007aff, 90%));
-  /** 紫色 */
-  @include lightpalette('purple', lightmixin(#af52de, 90%));
-  /** 粉色 */
-  @include lightpalette('pink', lightmixin(#ff2d55, 90%));
-  /** 棕色 */
-  @include lightpalette('brown', lightmixin(#a2845e, 90%));
-  /** 靛蓝色 */
-  @include lightpalette('indigo', lightmixin(#5856d6, 90%));
-  /** 薄荷色 */
-  @include lightpalette('mint', lightmixin(#00c7be, 90%));
-  /** 水蓝色 */
-  @include lightpalette('teal', lightmixin(#30b0c7, 90%));
+  --mask: #{lightmixopa(#00060a, 90%, 0.72)};
+  --mask1: #{lightmixopa(#00060a, 90%, 0.5)};
+  --mask2: #{lightmixopa(#00060a, 90%, 0.32)};
+  --mask3: #{lightmixopa(#00060a, 90%, 0.18)};
+  --mask4: #{lightmixopa(#00060a, 90%, 0.08)};
+  /** 纯色 */
+  @include lightsolids();
+  /** 彩色 */
+  @include lightcolors();
 }

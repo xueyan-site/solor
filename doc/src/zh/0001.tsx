@@ -1,5 +1,9 @@
 import React from 'react'
-import { SwitchTheme } from 'xueyan-react-style'
+import { Article, Segment } from 'xueyan-react-markdown'
+
+const MARK1 = `
+## xueyan-react-style
+`
 
 function ColorItem({
   name
@@ -52,17 +56,13 @@ function ColorBlock({
 
 export default function Main() {
   return (
-    <div 
-      style={{ 
-        backgroundColor: 'var(--base)',
-        padding: '16px'
-      }}
-    >
-      <SwitchTheme style={{ width: '240px' }} />
+    <Article>
+      <Segment>{MARK1}</Segment>
       <ColorBlock name="base" maxNum={2} />
       <ColorBlock name="font" maxNum={3} />
       <ColorBlock name="mask" maxNum={4} />
       <ColorBlock name="area" maxNum={10} />
+      <ColorBlock name="white" maxNum={10} />
       <ColorBlock name="red" maxNum={10} />
       <ColorBlock name="orange" maxNum={10} />
       <ColorBlock name="yellow" maxNum={10} />
@@ -75,6 +75,6 @@ export default function Main() {
       <ColorBlock name="indigo" maxNum={10} />
       <ColorBlock name="mint" maxNum={10} />
       <ColorBlock name="teal" maxNum={10} />
-    </div>
+    </Article>
   )
 }

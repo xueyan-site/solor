@@ -1,71 +1,81 @@
+@import './common.scss';
+
 $darkbase: #0D1117;
 
-@function darkmixin($color, $ratio) {
-  @return mix($color, $darkbase, $ratio);
+@function darkmix($color, $ratio) {
+  @return basemix($color, $darkbase, $ratio);
 }
 
-@function darkopacify($color, $opacity) {
-  @return transparentize($color, 1 - $opacity);
-}
-
-@function darkmixinopacify($color, $ratio, $opacity) {
-  @return darkopacify(darkmixin($color, $ratio), $opacity);
+@function darkmixopa($color, $ratio, $opacity) {
+  @return basemixopa($color, $darkbase, $ratio, $opacity);
 }
 
 @mixin darkpalette($name, $color) {
   --#{$name}: #{$color};
-  --#{$name}1: #{darkopacify($color, 0.08)};
-  --#{$name}2: #{darkopacify($color, 0.18)};
-  --#{$name}3: #{darkopacify($color, 0.32)};
-  --#{$name}4: #{darkopacify($color, 0.5)};
-  --#{$name}5: #{darkopacify($color, 0.72)};
-  --#{$name}6: #{darkmixin($color, 8%)};
-  --#{$name}7: #{darkmixin($color, 18%)};
-  --#{$name}8: #{darkmixin($color, 32%)};
-  --#{$name}9: #{darkmixin($color, 50%)};
-  --#{$name}10: #{darkmixin($color, 72%)};
+  --#{$name}1: #{baseopa($color, 0.08)};
+  --#{$name}2: #{baseopa($color, 0.18)};
+  --#{$name}3: #{baseopa($color, 0.32)};
+  --#{$name}4: #{baseopa($color, 0.5)};
+  --#{$name}5: #{baseopa($color, 0.72)};
+  --#{$name}6: #{darkmix($color, 8%)};
+  --#{$name}7: #{darkmix($color, 18%)};
+  --#{$name}8: #{darkmix($color, 32%)};
+  --#{$name}9: #{darkmix($color, 50%)};
+  --#{$name}10: #{darkmix($color, 72%)};
+}
+
+@mixin darkcolors {
+  /** 红色 */
+  @include darkpalette('red', darkmix(#ff453a, 90%));
+  /** 橙色 */
+  @include darkpalette('orange', darkmix(#ff9f0a, 90%));
+  /** 黄色 */
+  @include darkpalette('yellow', darkmix(#ffd60a, 90%));
+  /** 绿色 */
+  @include darkpalette('green', darkmix(#30d158, 90%));
+  /** 青色 */
+  @include darkpalette('cyan', darkmix(#64d2ff, 90%));
+  /** 蓝色 */
+  @include darkpalette('blue', darkmix(#0ab4ff, 90%));
+  /** 紫色 */
+  @include darkpalette('purple', darkmix(#bf5af2, 90%));
+  /** 粉色 */
+  @include darkpalette('pink', darkmix(#ff375f, 90%));
+  /** 棕色 */
+  @include darkpalette('brown', darkmix(#ac8e68, 90%));
+  /** 靛蓝色 */
+  @include darkpalette('indigo', darkmix(#515ce6, 90%));
+  /** 薄荷色 */
+  @include darkpalette('mint', darkmix(#63e6e2, 90%));
+  /** 水蓝色 */
+  @include darkpalette('teal', darkmix(#40cbe0, 90%));
+}
+
+@mixin darksolids {
+  /** 盒子 */
+  @include darkpalette('area', darkmix(#f3f9ff, 90%));
+  /** 白色 */
+  @include basepalette('white', darkmix(#f3f9ff, 90%), darkmix(#f3f9ff, 30%));
 }
 
 @mixin darktheme {
   /** 基调 */
   --base: #{$darkbase};
-  --base1: #{darkmixin(#def, 5%)};
-  --base2: #{darkmixin(#def, 10%)};
+  --base1: #{darkmix(#ddeeff, 5%)};
+  --base2: #{darkmix(#ddeeff, 10%)};
   /** 字体 */
-  --font: #{darkmixinopacify(#f0f8ff, 84%, 0.9)};
-  --font1: #{darkmixinopacify(#f0f8ff, 84%, 0.68)};
-  --font2: #{darkmixinopacify(#f0f8ff, 84%, 0.46)};
-  --font3: #{darkmixinopacify(#f0f8ff, 84%, 0.24)};
+  --font: #{darkmixopa(#f0f8ff, 84%, 0.9)};
+  --font1: #{darkmixopa(#f0f8ff, 84%, 0.68)};
+  --font2: #{darkmixopa(#f0f8ff, 84%, 0.46)};
+  --font3: #{darkmixopa(#f0f8ff, 84%, 0.24)};
   /** 蒙层 */
-  --mask: #{darkmixinopacify(#00060a, 90%, 0.72)};
-  --mask1: #{darkmixinopacify(#00060a, 90%, 0.5)};
-  --mask2: #{darkmixinopacify(#00060a, 90%, 0.32)};
-  --mask3: #{darkmixinopacify(#00060a, 90%, 0.18)};
-  --mask4: #{darkmixinopacify(#00060a, 90%, 0.08)};
-  /** 盒子 */
-  @include darkpalette('area', darkmixin(#f3f9ff, 90%));
-  /** 红色 */
-  @include darkpalette('red', darkmixin(#ff453a, 90%));
-  /** 橙色 */
-  @include darkpalette('orange', darkmixin(#ff9f0a, 90%));
-  /** 黄色 */
-  @include darkpalette('yellow', darkmixin(#ffd60a, 90%));
-  /** 绿色 */
-  @include darkpalette('green', darkmixin(#30d158, 90%));
-  /** 青色 */
-  @include darkpalette('cyan', darkmixin(#64d2ff, 90%));
-  /** 蓝色 */
-  @include darkpalette('blue', darkmixin(#0ab4ff, 90%));
-  /** 紫色 */
-  @include darkpalette('purple', darkmixin(#bf5af2, 90%));
-  /** 粉色 */
-  @include darkpalette('pink', darkmixin(#ff375f, 90%));
-  /** 棕色 */
-  @include darkpalette('brown', darkmixin(#ac8e68, 90%));
-  /** 靛蓝色 */
-  @include darkpalette('indigo', darkmixin(#515ce6, 90%));
-  /** 薄荷色 */
-  @include darkpalette('mint', darkmixin(#63e6e2, 90%));
-  /** 水蓝色 */
-  @include darkpalette('teal', darkmixin(#40cbe0, 90%));
+  --mask: #{darkmixopa(#00060a, 90%, 0.72)};
+  --mask1: #{darkmixopa(#00060a, 90%, 0.5)};
+  --mask2: #{darkmixopa(#00060a, 90%, 0.32)};
+  --mask3: #{darkmixopa(#00060a, 90%, 0.18)};
+  --mask4: #{darkmixopa(#00060a, 90%, 0.08)};
+  /** 纯色 */
+  @include darksolids();
+  /** 彩色 */
+  @include darkcolors();
 }

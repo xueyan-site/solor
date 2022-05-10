@@ -7,11 +7,11 @@ import type { DocumentInfo } from 'xueyan-react-doc'
 const DOCUMENTS: DocumentInfo<string,string>[] = [
   {
     value: '1',
-    label: 'collection 1',
+    label: '集一',
     contents: [
       {
         value: '1-1',
-        label: 'chapter 1: introduction',
+        label: '章一 色卡',
         content: () => import('./0001')
       }
     ]
@@ -22,7 +22,7 @@ export default function Index(props: PageProps) {
   return (
     <PageDoc 
       {...props}
-      language="en"
+      language="zh"
       version={pkg.version}
       documents={DOCUMENTS}
       name={pkg.name}
