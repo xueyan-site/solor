@@ -1,4 +1,5 @@
 import React from 'react'
+import 'xueyan-react-style'
 import { Doc } from 'xueyan-react-doc'
 import { Article, Segment } from 'xueyan-react-markdown'
 import pkg from '../../../package.json'
@@ -16,6 +17,11 @@ const ICONS: ImageLinkProps[] = [
     src: XT_PATH + 'repository.png',
     href: pkg.repository.url,
     title: 'repository',
+  },
+  {
+    src: XT_PATH + 'favicon.png',
+    href: '/',
+    title: 'website'
   }
 ]
 
@@ -38,7 +44,7 @@ const LANGUAGES: SelectOption<string>[] = [
 ]
 
 const SIDE_FOOTER = `
-Author [${XT_AUTHOR_NAME}](${XT_AUTHOR_EMAIL})  
+Author [${XT_AUTHOR_NAME}](mailto://${XT_AUTHOR_EMAIL})  
 Builder [xueyan-typescript-cli](https://github.com/xueyan-site/xueyan-typescript-cli)  
 `
 

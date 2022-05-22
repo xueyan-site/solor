@@ -1,0 +1,28 @@
+.coloritem {
+  height: 50px;
+  padding: 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  position: relative;
+  color: var(--font);
+  &:active {
+    opacity: .5;
+  }
+  .label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .color {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .alpha {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

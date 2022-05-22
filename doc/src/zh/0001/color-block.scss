@@ -1,0 +1,14 @@
+.colorblock {
+  padding: 8px;
+  background-color: var(--area1);
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  }
+  .label {
+    margin-bottom: 6px;
+  }
+}
