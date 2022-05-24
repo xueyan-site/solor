@@ -57,7 +57,7 @@ type MainColor =
 
 获取页面全局主色
 
-## useColorMode
+## useMainColor
 
 \`\`\`ts
 type useMainColor = () => MainColor
