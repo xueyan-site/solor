@@ -4,42 +4,48 @@ import { Article, Segment } from 'xueyan-react-markdown'
 const MARK1 = `
 ## getColorMode
 
-\`\`\`ts
-type getColorMode = () => ColorMode
+获取页面全局颜色模式
 
+\`\`\`
+type getColorMode = () => ColorMode
+\`\`\`
+
+\`\`\`
 type ColorMode = 
   | 'auto'    // 跟随系统
   | 'light'   // 亮色
   | 'dark'    // 暗色
 \`\`\`
 
-获取页面全局颜色模式
-
 ## useColorMode
 
-\`\`\`ts
+组件内获取页面全局颜色模式
+
+\`\`\`
 type useColorMode = () => ColorMode
 \`\`\`
-
-组件内获取页面全局颜色模式
 
 > 颜色模式更改时，它会引起组件的更新
 
 ## setColorMode
 
-\`\`\`ts
+设置页面全局颜色模式
+
+\`\`\`
 type setColorMode = (
   colorMode: ColorMode
 ) => void
 \`\`\`
 
-设置页面全局颜色模式
-
 ## getMainColor
 
-\`\`\`ts
-type getMainColor = () => MainColor
+获取页面全局主色
 
+\`\`\`
+type getMainColor = () => MainColor
+\`\`\`
+
+\`\`\`
 type MainColor = 
   | 'red'     // 红色
   | 'orange'  // 橙色
@@ -55,27 +61,25 @@ type MainColor =
   | 'teal'    // 水蓝色
 \`\`\`
 
-获取页面全局主色
-
 ## useMainColor
 
-\`\`\`ts
+组件内获取页面全局主色
+
+\`\`\`
 type useMainColor = () => MainColor
 \`\`\`
-
-组件内获取页面全局主色
 
 > 主色更改时，它会引起组件的更新
 
 ## setMainColor
 
-\`\`\`ts
+设置页面全局主色
+
+\`\`\`
 type setMainColor = (
   mainColor: MainColor
 ) => void
 \`\`\`
-
-设置页面全局主色
 `
 
 export default function Main() {

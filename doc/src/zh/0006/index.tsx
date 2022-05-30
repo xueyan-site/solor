@@ -6,7 +6,7 @@ const MARK1 = `
 
 在项目入口文件顶端引入本包。
 
-\`\`\`ts
+\`\`\`
 import 'xueyan-react-style'
 \`\`\`
 
@@ -33,7 +33,7 @@ body {
 
 效果如左侧。
 
-\`\`\`tsx
+\`\`\`
 <SwitchTheme />
 // 或者
 <SwitchColorMode />
@@ -42,7 +42,7 @@ body {
 
 2、以函数的形式
 
-\`\`\`ts
+\`\`\`
 setColorMode('dark')
 setMainColor('blue')
 \`\`\`
@@ -51,14 +51,14 @@ setMainColor('blue')
 
 1、 组件内部
 
-\`\`\`ts
+\`\`\`
 useColorMode()
 useMainColor()
 \`\`\`
 
 2、组件外部
 
-\`\`\`ts
+\`\`\`
 getColorMode()
 getMainColor()
 \`\`\`

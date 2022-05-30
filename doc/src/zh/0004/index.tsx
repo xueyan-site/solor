@@ -5,55 +5,40 @@ import { SwitchColorMode, SwitchMainColor, SwitchTheme } from '../../../../src/s
 const MARK1 = `
 ## SwitchColorMode
 
-\`\`\`ts
+切换页面全局颜色模式
+
+\`\`\`
 type SwitchColorMode = (props: {
-  className?: string;
-  style?: React.CSSProperties;
+  className?: string;            // 类名
+  style?: React.CSSProperties;   // 样式
 }) => JSX.Element
 \`\`\`
-
-| 属性 | 名称 | 类型 | 说明 |
-| - | - | - | - |
-| className | 类名 | \`? string\` |  |
-| style | 样式 | \`? React.CSSProperties\` |  |
-
-切换页面全局颜色模式
 `
 
 const MARK2 = `
 ## SwitchMainColor
 
-\`\`\`ts
+切换页面全局主色
+
+\`\`\`
 type SwitchMainColor = (props: {
-  className?: string;
-  style?: React.CSSProperties;
+  className?: string;            // 类名
+  style?: React.CSSProperties;   // 样式
 }) => JSX.Element
 \`\`\`
-
-| 属性 | 名称 | 类型 | 说明 |
-| - | - | - | - |
-| className | 类名 | \`? string\` |  |
-| style | 样式 | \`? React.CSSProperties\` |  |
-
-切换页面全局主色
 `
 
 const MARK3 = `
 ## SwitchTheme
 
-\`\`\`ts
+切换页面全局颜色模式和主色
+
+\`\`\`
 type SwitchTheme = (props: {
-  className?: string;
-  style?: React.CSSProperties;
+  className?: string;            // 类名
+  style?: React.CSSProperties;   // 样式
 }) => JSX.Element
 \`\`\`
-
-| 属性 | 名称 | 类型 | 说明 |
-| - | - | - | - |
-| className | 类名 | \`? string\` |  |
-| style | 样式 | \`? React.CSSProperties\` |  |
-
-切换页面全局颜色模式和主色
 `
 
 export default function Main() {

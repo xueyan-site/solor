@@ -14,7 +14,7 @@ const MARK1 = `
 
 用法如下：
 
-\`\`\`ts
+\`\`\`
 import { styles } from 'xueyan-react-style'
 <div className={styles.xrstylelight}>
   ...
