@@ -10,7 +10,7 @@ const MARK1 = `
 import 'xueyan-react-style'
 \`\`\`
 
-书写与颜色有关的 css 属性值时，用 [css 变量](${XT_PATH}?doc=0001) 代替。
+书写与颜色有关的 css 属性值时，用 [css 变量](?doc=0001) 代替。
 
 \`\`\`css
 background-color: var(--base1);

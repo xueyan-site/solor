@@ -19,7 +19,7 @@ export function ColorBlock({
         <ColorItem className={styles.item} name={name} />
       </div>
       {Array(maxLine).fill(null).map((_i, i) => (
-        <div className={styles.list}>
+        <div key={i} className={styles.list}>
           {Array(5).fill(null).map((_j, j) => {
             const key = (i * 5) + 1 + j
             return key > maxNum ? null : (
