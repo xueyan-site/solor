@@ -7,7 +7,7 @@ const MARK1 = `
 在项目入口文件顶端引入本包。
 
 \`\`\`
-import 'xueyan-react-style'
+import 'solor'
 \`\`\`
 
 书写与颜色有关的 css 属性值时，用 [css 变量](?doc=0001) 代替。

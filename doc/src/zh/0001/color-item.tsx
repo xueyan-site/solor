@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import cn from 'classnames'
-import { useColorMode } from 'xueyan-react-style'
+import { useColorMode } from 'solor'
 import styles from './color-item.scss'
 import { copyToClipboard } from 'utl/browser'
 

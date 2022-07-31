@@ -8,7 +8,7 @@ module.exports = {
     'ast': 'pub/ast',
     'com': 'pub/com',
     'utl': 'pub/utl',
-    'xueyan-react-style': '../src'
+    'solor': '../src'
   },
   serve: {
     port: 12017
