@@ -2,8 +2,8 @@ import React from 'react'
 import cn from 'classnames'
 import styles from './switch-theme.scss'
 import { setColorMode, useColorMode, setMainColor, useMainColor, ColorMode } from './theme'
-import { Select, SelectOption } from 'xueyan-react-select'
-import { SunIcon, MoonIcon, StarIcon } from 'xueyan-react-icon'
+import { Select, SelectOption } from 'ark-select'
+import { SunIcon, MoonIcon, StarIcon } from 'sicon'
 import type { MainColor } from './theme'
 
 function Label({

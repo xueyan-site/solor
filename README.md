@@ -1,6 +1,6 @@
 # solor
 
-React color theme package
+Sass color theme
 
 ## Document
 
