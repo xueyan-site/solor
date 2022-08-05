@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import cn from 'classnames'
 import { useColorMode } from 'solor'
-import styles from './color-item.scss'
 import { copyToClipboard } from 'utl/browser'
+import styles from './color-item.scss'
 
 export function ColorItem({
   name,

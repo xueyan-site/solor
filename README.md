@@ -1,5 +1,7 @@
 # solor
 
+![solor](https://xueyan.site/solor/ast/project.png)
+
 Sass color theme
 
 ## Document

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Article, Segment } from 'xueyan-react-markdown'
-import { SwitchColorMode, SwitchMainColor, SwitchTheme } from '../../../../src/switch-theme'
+import { Article, Segment } from 'ark-markdown'
+import { SwitchColorMode, SwitchMainColor, SwitchTheme } from 'solor'
 
 const MARK1 = `
 ## SwitchColorMode

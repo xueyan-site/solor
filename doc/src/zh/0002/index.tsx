@@ -1,5 +1,5 @@
 import React from 'react'
-import { Article, Segment } from 'xueyan-react-markdown'
+import { Article, Segment } from 'ark-markdown'
 import MODE1_IMG from './mode1.png'
 import MODE2_IMG from './mode2.png'
 
